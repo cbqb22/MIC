@@ -1,0 +1,33 @@
+﻿<Window x:Class="ControlLibrary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlLibrary"
+        xmlns:indicator="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Viewbox Width="100">
+                <indicator:Indicator x:Name="indicator" IndicationThemeColor="Green" DisplayText="監視中" />
+            </Viewbox>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Viewbox >
+                <StackPanel Width="100" Height="auto">
+                    <TextBlock Text="あいうえお" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock Text="かきくけこ" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock Text="さしすせそ" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock Text="たちつてと" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock Text="なにぬねの" VerticalAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Window>

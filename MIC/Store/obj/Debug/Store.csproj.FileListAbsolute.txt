@@ -1,0 +1,5 @@
+C:\Users\poohace\Source\Repos\MIC\Store\obj\Debug\App.g.cs
+C:\Users\poohace\Source\Repos\MIC\Store\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\poohace\Source\Repos\MIC\Store\obj\Debug\Store_MarkupCompile.cache
+C:\Users\poohace\Source\Repos\MIC\Store\obj\Debug\Store_MarkupCompile.lref
+C:\Users\poohace\Source\Repos\MIC\Store\bin\Debug\Store.exe.config
