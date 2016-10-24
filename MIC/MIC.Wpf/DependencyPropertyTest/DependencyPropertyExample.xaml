@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="MIC.Wpf.DependencyPropertyTest.DependencyPropertyExample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MIC.Wpf.DependencyPropertyTest"
+             mc:Ignorable="d"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:behavior="clr-namespace:MIC.Wpf.Common.Behaviors"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             Width="auto" Height="auto"
+             >
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <ScrollViewer  Width="100" Height="100">
+                <i:Interaction.Behaviors>
+                    <behavior:ScrollViewerMouseMoveBehavior MousePoint="{Binding Point,Mode=TwoWay}"/>
+                </i:Interaction.Behaviors>
+            </ScrollViewer>
+
+            <TextBox x:Name="tbx" Text="{Binding MyName,Mode=TwoWay}" Width="100" Height="30"/>
+
+            <Button x:Name="button" Content="座標表示" Click="button_Click" Width="100" Height="100"/>
+
+        </StackPanel>
+        
+            
+    </Grid>
+</UserControl>

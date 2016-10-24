@@ -26,7 +26,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
             InitializeComponent();
         }
 
-        public static readonly DependencyProperty IndicationThemeColorProperty =   DependencyProperty.Register(
+        public static readonly  DependencyProperty IndicationThemeColorProperty =   DependencyProperty.Register(
                                                                                    "IndicationThemeColor", 
                                                                                    typeof(Color), 
                                                                                    typeof(Indicator), 

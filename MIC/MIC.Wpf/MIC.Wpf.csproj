@@ -85,6 +85,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindableStructs\BindablePoint.cs" />
+    <Compile Include="Common\Behaviors\ScrollViewerMouseMoveBehavior.cs" />
     <Compile Include="Controls\Animations\FlowParticles\FlowParticles.xaml.cs">
       <DependentUpon>FlowParticles.xaml</DependentUpon>
     </Compile>
@@ -96,6 +98,9 @@
     </Compile>
     <Compile Include="Controls\Animations\Loading\test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyPropertyTest\DependencyPropertyExample.xaml.cs">
+      <DependentUpon>DependencyPropertyExample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -141,10 +146,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DependencyPropertyTest\DependencyPropertyExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\Actions\" />
-    <Folder Include="Common\Behaviors\" />
     <Folder Include="Common\Triggers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
