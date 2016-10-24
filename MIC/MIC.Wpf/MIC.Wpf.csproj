@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="BindableStructs\BindablePoint.cs" />
     <Compile Include="Common\Behaviors\ScrollViewerMouseMoveBehavior.cs" />
+    <Compile Include="Common\Events\AnimationStartEvent.cs" />
     <Compile Include="Controls\Animations\FlowParticles\FlowParticles.xaml.cs">
       <DependentUpon>FlowParticles.xaml</DependentUpon>
     </Compile>

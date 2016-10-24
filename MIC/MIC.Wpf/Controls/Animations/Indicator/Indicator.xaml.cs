@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Windows.Media.Animation;
 
 namespace MIC.Wpf.Controls.Animations.Indicator
 {
@@ -25,6 +26,29 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         {
             InitializeComponent();
         }
+
+        public void SetInit()
+        {
+            Storyboard = this.TryFindResource("Storyboard1") as Storyboard;
+        }
+
+        private Storyboard _storyboard;
+        public Storyboard Storyboard
+        {
+            get
+            {
+                return _storyboard;
+            }
+
+            set
+            {
+                _storyboard = value;
+            }
+        }
+
+
+
+
 
         public static readonly  DependencyProperty IndicationThemeColorProperty =   DependencyProperty.Register(
                                                                                    "IndicationThemeColor", 
@@ -53,9 +77,6 @@ namespace MIC.Wpf.Controls.Animations.Indicator
 
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-        }
     }
 
 }

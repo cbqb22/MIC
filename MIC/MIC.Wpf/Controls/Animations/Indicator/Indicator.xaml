@@ -60,14 +60,14 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>
-    <UserControl.Triggers>
+    <!--<UserControl.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource Storyboard1}" x:Name="storyboard"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="Button.Click">
             <PauseStoryboard BeginStoryboardName="storyboard"/>
         </EventTrigger>
-    </UserControl.Triggers>
+    </UserControl.Triggers>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
