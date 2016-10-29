@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace ControlLibrary
 {
@@ -24,5 +27,14 @@ namespace ControlLibrary
         {
             InitializeComponent();
         }
+
+        private void btnStartOrStop_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+
+
+
+
     }
 }

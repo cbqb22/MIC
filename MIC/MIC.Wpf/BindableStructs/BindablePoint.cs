@@ -18,8 +18,7 @@ namespace MIC.Wpf.BindableStructs
 
     public class BindablePoint : DependencyObject
     {
-
-        public BindablePoint(double x, double y)
+        public BindablePoint(double x,double y)
         {
             X = x;
             Y = y;
@@ -41,7 +40,7 @@ namespace MIC.Wpf.BindableStructs
             point.Y = (double)e.NewValue;
         }));
 
-        public  double X
+        public double X
         {
             get { return (double)GetValue(XProperty); }
             set
@@ -50,7 +49,7 @@ namespace MIC.Wpf.BindableStructs
             }
         }
 
-        public  double Y
+        public double Y
         {
             get { return (double)GetValue(YProperty); }
             set
@@ -58,6 +57,7 @@ namespace MIC.Wpf.BindableStructs
                 SetValue(YProperty, value);
             }
         }
+
     }
 
 }

@@ -86,19 +86,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindableStructs\BindablePoint.cs" />
+    <Compile Include="Common\Actions\AnimationAction.cs" />
     <Compile Include="Common\Behaviors\ScrollViewerMouseMoveBehavior.cs" />
     <Compile Include="Common\Events\AnimationStartEvent.cs" />
+    <Compile Include="Common\Message\AnimationActionMessage.cs" />
+    <Compile Include="Common\Triggers\AnimationStopMessageTrigger.cs" />
     <Compile Include="Controls\Animations\FlowParticles\FlowParticles.xaml.cs">
       <DependentUpon>FlowParticles.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Animations\IAnimation.cs" />
     <Compile Include="Controls\Animations\Indicator\Indicator.xaml.cs">
       <DependentUpon>Indicator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Animations\Loading\NowLoading.xaml.cs">
-      <DependentUpon>NowLoading.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Animations\Loading\test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
     </Compile>
     <Compile Include="DependencyPropertyTest\DependencyPropertyExample.xaml.cs">
       <DependentUpon>DependencyPropertyExample.xaml</DependentUpon>
@@ -136,14 +134,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Animations\Indicator\Indicator.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\Animations\Loading\NowLoading.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Animations\Loading\test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,10 +142,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\Actions\" />
-    <Folder Include="Common\Triggers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

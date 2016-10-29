@@ -1,4 +1,12 @@
+using System.Windows.Input;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using MIC.Wpf.Common.Message;
+using MIC.Wpf.Controls.Animations.Indicator;
+using Microsoft.Practices.ServiceLocation;
+
+
 
 namespace ControlLibrary.ViewModel
 {
@@ -19,16 +27,34 @@ namespace ControlLibrary.ViewModel
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel()
+        public MainViewModel() : base(Messenger.Default)
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            AnimationActionCommand = new RelayCommand(AnimationActionCommandExecute);            
+
         }
+
+
+        private ICommand _animationActionCommand;
+        public ICommand AnimationActionCommand
+        {
+            get
+            {
+                return _animationActionCommand;
+            }
+
+            set
+            {
+                _animationActionCommand = value;
+            }
+        }
+
+
+
+        private void AnimationActionCommandExecute()
+        {
+            MessengerInstance.Send(new AnimationActionMessage(AnimationActionEnum.Begin));
+        }
+
+
     }
 }

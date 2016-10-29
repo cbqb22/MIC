@@ -49,11 +49,8 @@ namespace MIC.Wpf.Common.Behaviors
 
         private void Moved(object sender, MouseEventArgs e)
         {
-
             Point point = e.GetPosition((ScrollViewer)sender);
-
-            //this.MousePoint = point.X.ToString();
-            this.MousePoint = new BindablePoint(point.X,point.Y);
+            this.MousePoint = new BindablePoint(point.X, point.Y);
 
         }
 

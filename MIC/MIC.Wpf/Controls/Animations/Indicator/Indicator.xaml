@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" 
              x:Name="userControl" 
-             x:Class="MIC.Wpf.Controls.Animations.Indicator.Indicator" 
+             x:Class="MIC.Wpf.Controls.Animations.Indicator.Indicator"
              mc:Ignorable="d" 
-             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+            DataContext="{Binding RelativeSource={RelativeSource Self}}"
              Width="100" Height="100" Opacity="0.6" >
     <UserControl.Resources>
         <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever" AutoReverse="False" FrameworkElement.FlowDirection="LeftToRight">
@@ -59,13 +59,16 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:4" Value="10"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
     </UserControl.Resources>
     <!--<UserControl.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource Storyboard1}" x:Name="storyboard"/>
-        </EventTrigger>
-        <EventTrigger RoutedEvent="Button.Click">
-            <PauseStoryboard BeginStoryboardName="storyboard"/>
         </EventTrigger>
     </UserControl.Triggers>-->
     <Grid>
@@ -74,9 +77,9 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="textBlock"  Margin="21.666,31.666,21.479,30.333" FontWeight="Bold" TextWrapping="Wrap" Text="{Binding DisplayText}" d:LayoutOverrides="Width, Height" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="textBlock"  Margin="21.666,31.666,21.479,30.333"  TextWrapping="Wrap" Text="{Binding DisplayText}" d:LayoutOverrides="Width, Height" >
             <TextBlock.Foreground>
-                        <SolidColorBrush Color="{Binding Path=IndicationThemeColor}"/>
+                <SolidColorBrush Color="{Binding Path=IndicationThemeColor}"/>
             </TextBlock.Foreground>
         </TextBlock>
         <Grid Grid.Row="0" >
@@ -194,10 +197,5 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-
-        <Grid Grid.Row="1">
-            <Button Content="click" Click="Button_Click"/>
-        </Grid>
-
     </Grid>
 </UserControl>

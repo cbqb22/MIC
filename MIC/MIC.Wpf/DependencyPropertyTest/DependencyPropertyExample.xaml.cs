@@ -31,9 +31,7 @@ namespace MIC.Wpf.DependencyPropertyTest
                                    = DependencyProperty.Register("MyName",
                                    typeof(string),
                                    typeof(DependencyPropertyExample),
-                                   new PropertyMetadata()
-                                   //new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
-                                   );
+                                   new PropertyMetadata());
 
 
         public string MyName
@@ -42,26 +40,7 @@ namespace MIC.Wpf.DependencyPropertyTest
             set { SetValue(MyNameProperty, value); }
         }
 
-
-        //public static readonly DependencyProperty PointProperty
-        //                   = DependencyProperty.Register("Point",
-        //                   typeof(string),
-        //                   typeof(DependencyPropertyExample),
-        //                   new PropertyMetadata()
-        //                   //new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
-        //                   );
-
-
-        //public string Point
-        //{
-        //    get { return (string)GetValue(PointProperty); }
-        //    set { SetValue(PointProperty, value); }
-        //}
-
-
-
         private BindablePoint _point;
-
         public BindablePoint Point
         {
             get

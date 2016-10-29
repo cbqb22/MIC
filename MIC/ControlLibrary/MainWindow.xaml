@@ -4,19 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlLibrary"
-        xmlns:indicator="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:t="clr-namespace:MIC.Wpf.Common.Triggers;assembly=MIC.Wpf"
+        xmlns:act="clr-namespace:MIC.Wpf.Common.Actions;assembly=MIC.Wpf"
         xmlns:dptest="clr-namespace:MIC.Wpf.DependencyPropertyTest;assembly=MIC.Wpf"
+        xmlns:indicator="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
+        xmlns:vm="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
         mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator},Path=Main}"
         Title="MainWindow" Height="auto" Width="525">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Viewbox Width="100">
-                <indicator:Indicator x:Name="indicator" IndicationThemeColor="Green" DisplayText="監視中" />
+                <indicator:Indicator x:Name="indicator" IndicationThemeColor="Green" DisplayText="停止中" StartedText="監視中" StoppedText="停止" PausingText="一時停止">
+                    <i:Interaction.Triggers>
+                        <t:AnimationMessageTrigger>
+                            <act:AnimationAction/>
+                        </t:AnimationMessageTrigger>
+                    </i:Interaction.Triggers>
+                </indicator:Indicator>
             </Viewbox>
 
         </Grid>
@@ -34,5 +46,7 @@
         <Grid Grid.Row="2">
             <dptest:DependencyPropertyExample />
         </Grid>
+
+        <Button Grid.Row="3" x:Name="btnStartOrStop" Content="動作" Command="{Binding AnimationActionCommand}" />
     </Grid>
 </Window>
