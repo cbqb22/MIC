@@ -1,14 +1,13 @@
 ﻿using System.Windows;
 using System.Windows.Interactivity;
-using GalaSoft.MvvmLight.Messaging;
 using MIC.Wpf.Common.Message;
-using System.Windows.Controls;
-using MIC.Wpf.Controls.Animations.Indicator;
 using MIC.Wpf.Controls.Animations;
 
 namespace MIC.Wpf.Common.Actions
 {
-    // Animationのアクション
+    /// <summary>
+    /// AnimationActionTriggerに対するのアクション
+    /// </summary>
     public class AnimationAction : TriggerAction<DependencyObject>
     {
         protected override void Invoke(object parameter)
@@ -34,8 +33,6 @@ namespace MIC.Wpf.Common.Actions
 
                         default:
                             break;
-
-
                     }
                 }
             }

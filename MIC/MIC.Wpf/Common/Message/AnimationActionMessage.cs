@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MIC.Wpf.Common.Message
+﻿namespace MIC.Wpf.Common.Message
 {
+    /// <summary>
+    /// AnimationActionのMessageクラス
+    /// </summary>
     public class AnimationActionMessage
     {
         private AnimationActionEnum _action;

@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\poohace\Desktop\GitRepo\MIC2\MIC2\MIC.Wpf\obj\Debug\
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\
 MIC.Wpf
 none
 false
 DEBUG;TRACE
 
-31896429603
+3-517674440
 
-13768011261
-76-1665897960
-Controls\Animations\FlowParticles\FlowParticles.xaml;Controls\Animations\Indicator\Indicator.xaml;DependencyPropertyTest\DependencyPropertyExample.xaml;
+15660918323
+76-1704298330
+Controls\Animations\FlowParticles\FlowParticles.xaml;Controls\Animations\Indicator\SimpleIndicatorEx.xaml;DependencyPropertyTest\DependencyPropertyExample.xaml;
 
 False
 

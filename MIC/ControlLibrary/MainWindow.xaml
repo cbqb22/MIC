@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ControlLibrary"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:t="clr-namespace:MIC.Wpf.Common.Triggers;assembly=MIC.Wpf"
-        xmlns:act="clr-namespace:MIC.Wpf.Common.Actions;assembly=MIC.Wpf"
+        xmlns:a="clr-namespace:MIC.Wpf.Common.Actions;assembly=MIC.Wpf"
         xmlns:dptest="clr-namespace:MIC.Wpf.DependencyPropertyTest;assembly=MIC.Wpf"
         xmlns:indicator="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
         xmlns:vm="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
@@ -22,13 +22,13 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Viewbox Width="100">
-                <indicator:Indicator x:Name="indicator" IndicationThemeColor="Green" DisplayText="停止中" StartedText="監視中" StoppedText="停止" PausingText="一時停止">
+                <indicator:SimpleIndicatorEx x:Name="indicator" IndicationThemeColor="Green" DisplayText="停止中" PlayingText="監視中" StoppedText="停止" PausingText="一時停止">
                     <i:Interaction.Triggers>
                         <t:AnimationMessageTrigger>
-                            <act:AnimationAction/>
+                            <a:AnimationAction/>
                         </t:AnimationMessageTrigger>
                     </i:Interaction.Triggers>
-                </indicator:Indicator>
+                </indicator:SimpleIndicatorEx>
             </Viewbox>
 
         </Grid>

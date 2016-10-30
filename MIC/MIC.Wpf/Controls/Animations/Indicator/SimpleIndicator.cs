@@ -1,50 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MIC.Wpf.Controls.Animations.Indicator
 {
     /// <summary>
-    /// Indicator.xaml の相互作用ロジック
+    /// SimpleIndicatorEx用の依存プロパティ、IAnimationを実装したクラス
     /// </summary>
-    public partial class Indicator : UserControl , IAnimation
+    public class SimpleIndicator : IndicatorBase
     {
-        public Indicator()
-        {
-            InitializeComponent();
-        }
-
         #region IAnimationの実装
 
         /// <summary>
         /// アニメーション開始
         /// </summary>
-        public void Begin()
+        public override void Begin()
         {
             var storyBoard = this.TryFindResource("Storyboard1") as Storyboard;
-            if(storyBoard != null)
+            if (storyBoard != null)
             {
                 storyBoard.Begin();
-                DisplayText = PlayingText; 
+                DisplayText = PlayingText;
             }
         }
 
         /// <summary>
         /// アニメーション一時停止
         /// </summary>
-        public void Pause()
+        public override void Pause()
         {
             var storyBoard = this.TryFindResource("Storyboard1") as Storyboard;
             if (storyBoard != null)
@@ -57,7 +40,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         /// <summary>
         /// アニメーション停止
         /// </summary>
-        public void Stop()
+        public override void Stop()
         {
             var storyBoard = this.TryFindResource("Storyboard1") as Storyboard;
             if (storyBoard != null)
@@ -77,7 +60,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         public static readonly DependencyProperty IndicationThemeColorProperty = DependencyProperty.Register(
                                                                            "IndicationThemeColor",
                                                                            typeof(Color),
-                                                                           typeof(Indicator),
+                                                                           typeof(SimpleIndicator),
                                                                            new PropertyMetadata(Colors.Orange));
         /// <summary>
         /// IndicationThemeColorプロパティ
@@ -94,7 +77,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         public static readonly DependencyProperty PausingTextProperty = DependencyProperty.Register(
                                                                            "PausingText",
                                                                            typeof(string),
-                                                                           typeof(Indicator),
+                                                                           typeof(SimpleIndicator),
                                                                            new PropertyMetadata(""));
         /// <summary>
         /// PausingTextのプロパティ
@@ -112,7 +95,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         public static readonly DependencyProperty PlayingTextProperty = DependencyProperty.Register(
                                                                    "PlayingText",
                                                                    typeof(string),
-                                                                   typeof(Indicator),
+                                                                   typeof(SimpleIndicator),
                                                                    new PropertyMetadata(""));
         /// <summary>
         /// PlayingTextのプロパティ
@@ -129,7 +112,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         public static readonly DependencyProperty StoppedTextProperty = DependencyProperty.Register(
                                                                            "StoppedText",
                                                                            typeof(string),
-                                                                           typeof(Indicator),
+                                                                           typeof(SimpleIndicator),
                                                                            new PropertyMetadata(""));
 
         /// <summary>
@@ -148,7 +131,7 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         public static readonly DependencyProperty DisplayTextProperty = DependencyProperty.Register(
                                                                            "DisplayText",
                                                                            typeof(string),
-                                                                           typeof(Indicator),
+                                                                           typeof(SimpleIndicator),
                                                                            new PropertyMetadata(""));
 
         /// <summary>
@@ -161,7 +144,5 @@ namespace MIC.Wpf.Controls.Animations.Indicator
         }
 
         #endregion 
-
-
     }
 }

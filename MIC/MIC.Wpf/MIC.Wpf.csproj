@@ -90,14 +90,16 @@
     <Compile Include="Common\Behaviors\ScrollViewerMouseMoveBehavior.cs" />
     <Compile Include="Common\Events\AnimationStartEvent.cs" />
     <Compile Include="Common\Message\AnimationActionMessage.cs" />
-    <Compile Include="Common\Triggers\AnimationStopMessageTrigger.cs" />
+    <Compile Include="Common\Triggers\AnimationMessageTrigger.cs" />
     <Compile Include="Controls\Animations\FlowParticles\FlowParticles.xaml.cs">
       <DependentUpon>FlowParticles.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Animations\IAnimation.cs" />
-    <Compile Include="Controls\Animations\Indicator\Indicator.xaml.cs">
-      <DependentUpon>Indicator.xaml</DependentUpon>
+    <Compile Include="Controls\Animations\Indicator\IndicatorBase.cs" />
+    <Compile Include="Controls\Animations\Indicator\SimpleIndicatorEx.xaml.cs">
+      <DependentUpon>SimpleIndicatorEx.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Animations\Indicator\SimpleIndicator.cs" />
     <Compile Include="DependencyPropertyTest\DependencyPropertyExample.xaml.cs">
       <DependentUpon>DependencyPropertyExample.xaml</DependentUpon>
     </Compile>
@@ -133,7 +135,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Animations\Indicator\Indicator.xaml">
+    <Page Include="Controls\Animations\Indicator\SimpleIndicatorEx.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

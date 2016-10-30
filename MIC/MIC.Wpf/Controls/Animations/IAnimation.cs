@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MIC.Wpf.Controls.Animations
 {
-    interface IAnimation
+    public interface IAnimation
     {
         void Begin();
         void Stop();

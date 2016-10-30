@@ -6,15 +6,15 @@ using MIC.Wpf.Common.Message;
 
 namespace MIC.Wpf.Common.Triggers
 {
-    // Messenger が AnimationStopMessage を受信したときに反応するトリガー。
+    /// <summary>
+    /// Messenger が AnimationActionMessage を受信したときに反応するトリガー。
+    /// </summary>
     public class AnimationMessageTrigger : TriggerBase<DependencyObject>
     {
         protected override void OnAttached()
         {
             base.OnAttached();
 
-            // DialogMessage を受信したらアクションを実行
-            // AssociatedObject は添付プロパティでこのトリガーを設定したオブジェクト。
             Messenger.Default.Register<AnimationActionMessage>(
                 AssociatedObject,
                 msg => InvokeActions(msg));

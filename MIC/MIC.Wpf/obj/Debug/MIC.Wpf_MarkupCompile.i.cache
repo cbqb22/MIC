@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-31896429603
+3-517674440
 
-172026935372
+191919842434
 76-1704298330
-Controls\Animations\FlowParticles\FlowParticles.xaml;Controls\Animations\Indicator\Indicator.xaml;DependencyPropertyTest\DependencyPropertyExample.xaml;
+Controls\Animations\FlowParticles\FlowParticles.xaml;Controls\Animations\Indicator\SimpleIndicatorEx.xaml;DependencyPropertyTest\DependencyPropertyExample.xaml;
 
 True
 
