@@ -162,3 +162,10 @@ C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.dll
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.pdb
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Controls\Animations\Indicator\SimpleIndicatorEx.g.cs
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Controls\Animations\Indicator\SimpleIndicatorEx.baml
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.csprojResolveAssemblyReference.cache
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Themes\Generic.baml
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Themes\ProgressRing.baml
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Controls\Tiles\TilesExample.g.cs
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Themes\Tile.baml
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Controls\Tiles\TilesExample.baml
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\Themes\ResourceDictionary.baml

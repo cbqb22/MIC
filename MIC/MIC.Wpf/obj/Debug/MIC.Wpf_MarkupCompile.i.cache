@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-3-517674440
+8-2035290846
 
-191919842434
+26863079437
 76-1704298330
-Controls\Animations\FlowParticles\FlowParticles.xaml;Controls\Animations\Indicator\SimpleIndicatorEx.xaml;DependencyPropertyTest\DependencyPropertyExample.xaml;
+Controls\Animations\FlowParticles\FlowParticles.xaml;Controls\Animations\Indicator\SimpleIndicatorEx.xaml;Controls\Tiles\TilesExample.xaml;DependencyPropertyTest\DependencyPropertyExample.xaml;Themes\Generic.xaml;Themes\ProgressRing.xaml;Themes\ResourceDictionary.xaml;Themes\Tile.xaml;
 
-True
+False
 

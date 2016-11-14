@@ -1,10 +1,10 @@
+using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using MIC.Wpf.Common.Message;
-using MIC.Wpf.Controls.Animations.Indicator;
-using Microsoft.Practices.ServiceLocation;
+using System.Collections.ObjectModel;
 
 
 
@@ -29,8 +29,16 @@ namespace ControlLibrary.ViewModel
         /// </summary>
         public MainViewModel() : base(Messenger.Default)
         {
-            AnimationActionCommand = new RelayCommand(AnimationActionCommandExecute);            
+            AnimationActionCommand = new RelayCommand(AnimationActionCommandExecute);
 
+            this.Users = new ObservableCollection<User>();
+            User u = new User();
+            u.Name = "éOè„";
+            u.Nickname = "Ç’Ç¡Çø";
+            u.Birthday = DateTime.Now;
+            u.Age = 34;
+            u.Birthplace = "ìåãû";
+            //this.Users.Add(u);
         }
 
 
@@ -48,13 +56,117 @@ namespace ControlLibrary.ViewModel
             }
         }
 
+        public ObservableCollection<User> Users
+        {
+            get
+            {
+                return _users;
+            }
 
+            set
+            {
+                _users = value;
+            }
+        }
+
+        private bool IsStop = false;
 
         private void AnimationActionCommandExecute()
         {
-            MessengerInstance.Send(new AnimationActionMessage(AnimationActionEnum.Begin));
+            if (IsStop)
+            {
+                MessengerInstance.Send(new AnimationActionMessage(AnimationActionEnum.Begin));
+                IsStop = false;
+            }
+            else
+            {
+                MessengerInstance.Send(new AnimationActionMessage(AnimationActionEnum.Stop));
+                IsStop = true;
+            }
+
         }
+
+        private ObservableCollection<User> _users;
 
 
     }
+
+    public class User
+    {
+        private string _nickname;
+
+        private string _name;
+
+        private string _birthplace;
+
+        private int _age;
+
+        private DateTime _birthday;
+
+        public string Nickname
+        {
+            get
+            {
+                return _nickname;
+            }
+
+            set
+            {
+                _nickname = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                _name = value;
+            }
+        }
+
+        public string Birthplace
+        {
+            get
+            {
+                return _birthplace;
+            }
+
+            set
+            {
+                _birthplace = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return _age;
+            }
+
+            set
+            {
+                _age = value;
+            }
+        }
+
+        public DateTime Birthday
+        {
+            get
+            {
+                return _birthday;
+            }
+
+            set
+            {
+                _birthday = value;
+            }
+        }
+    }
+
 }

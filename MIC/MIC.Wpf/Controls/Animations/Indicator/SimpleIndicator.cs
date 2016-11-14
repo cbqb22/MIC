@@ -45,10 +45,21 @@ namespace MIC.Wpf.Controls.Animations.Indicator
             var storyBoard = this.TryFindResource("Storyboard1") as Storyboard;
             if (storyBoard != null)
             {
+                //storyBoard.RepeatBehavior = new RepeatBehavior(1);
+                //storyBoard.Seek(new System.TimeSpan(0, 0, 4));
                 storyBoard.Stop();
+                //storyBoard.SkipToFill();
                 DisplayText = StoppedText;
+
+                //DisplayText = PausingText;
+
+                //storyBoard.Completed += (sender , e) => 
+                //{
+                //    DisplayText = StoppedText;
+                //};
             }
         }
+
 
         #endregion
         #region 依存プロパティ

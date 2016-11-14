@@ -151,3 +151,14 @@ C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\obj\Debug\ControlLibrary
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\obj\Debug\ControlLibrary.csproj.GenerateResource.Cache
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\obj\Debug\ControlLibrary.exe
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\obj\Debug\ControlLibrary.pdb
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll

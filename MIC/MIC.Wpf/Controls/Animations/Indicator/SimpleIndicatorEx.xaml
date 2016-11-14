@@ -13,7 +13,7 @@
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
              Width="100" Height="100" Opacity="0.6" >
     <base:SimpleIndicator.Resources>
-        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever" AutoReverse="False" FrameworkElement.FlowDirection="LeftToRight">
+        <Storyboard x:Key="Storyboard1"  AutoReverse="False" FrameworkElement.FlowDirection="LeftToRight">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ellipse">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0">
                     <EasingDoubleKeyFrame.EasingFunction>

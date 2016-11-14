@@ -13,5 +13,16 @@ namespace ControlLibrary
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            this.Resources["test"] = "aaaa";
+            this.Resources["solidcolorRed"] = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.AliceBlue);
+
+            var str = this.Resources["test"] as string;
+
+            var aliceblue = this.Resources["solidcolorRed"] as System.Windows.Media.SolidColorBrush;
+
+
+        }
     }
 }

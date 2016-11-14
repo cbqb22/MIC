@@ -10,43 +10,127 @@
         xmlns:dptest="clr-namespace:MIC.Wpf.DependencyPropertyTest;assembly=MIC.Wpf"
         xmlns:indicator="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
         xmlns:vm="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:Controls="clr-namespace:MIC.Wpf.Controls.Animations.ProgressRing;assembly=MIC.Wpf"
+        xmlns:tiles="clr-namespace:MIC.Wpf.Controls.Tiles;assembly=MIC.Wpf"
+        xmlns:mvm="clr-namespace:ControlLibrary.ViewModel"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource Locator},Path=Main}"
-        Title="MainWindow" Height="auto" Width="525">
+        Title="MainWindow" Height="auto" Width="1000">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Viewbox Width="100">
-                <indicator:SimpleIndicatorEx x:Name="indicator" IndicationThemeColor="Green" DisplayText="停止中" PlayingText="監視中" StoppedText="停止" PausingText="一時停止">
-                    <i:Interaction.Triggers>
-                        <t:AnimationMessageTrigger>
-                            <a:AnimationAction/>
-                        </t:AnimationMessageTrigger>
-                    </i:Interaction.Triggers>
-                </indicator:SimpleIndicatorEx>
-            </Viewbox>
+        <TabControl>
+            <TabItem Header="全般" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Viewbox Width="100">
+                            <indicator:SimpleIndicatorEx x:Name="indicator" IndicationThemeColor="Green" DisplayText="停止中" PlayingText="監視中" StoppedText="停止" PausingText="一時停止">
+                                <i:Interaction.Triggers>
+                                    <t:AnimationMessageTrigger>
+                                        <a:AnimationAction/>
+                                    </t:AnimationMessageTrigger>
+                                </i:Interaction.Triggers>
+                            </indicator:SimpleIndicatorEx>
+                        </Viewbox>
 
-        </Grid>
-        <Grid Grid.Row="1">
-            <Viewbox >
-                <StackPanel Width="100" Height="auto">
-                    <TextBlock Text="あいうえお" VerticalAlignment="Center" Margin="5"/>
-                    <TextBlock Text="かきくけこ" VerticalAlignment="Center" Margin="5"/>
-                    <TextBlock Text="さしすせそ" VerticalAlignment="Center" Margin="5"/>
-                    <TextBlock Text="たちつてと" VerticalAlignment="Center" Margin="5"/>
-                    <TextBlock Text="なにぬねの" VerticalAlignment="Center" Margin="5"/>
-                </StackPanel>
-            </Viewbox>
-        </Grid>
-        <Grid Grid.Row="2">
-            <dptest:DependencyPropertyExample />
-        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Viewbox >
+                            <StackPanel Width="100" Height="auto">
+                                <TextBlock Text="あいうえお" VerticalAlignment="Center" Margin="5"/>
+                                <TextBlock Text="かきくけこ" VerticalAlignment="Center" Margin="5"/>
+                                <TextBlock Text="さしすせそ" VerticalAlignment="Center" Margin="5"/>
+                                <TextBlock Text="たちつてと" VerticalAlignment="Center" Margin="5"/>
+                                <TextBlock Text="なにぬねの" VerticalAlignment="Center" Margin="5"/>
+                            </StackPanel>
+                        </Viewbox>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <dptest:DependencyPropertyExample />
+                    </Grid>
 
-        <Button Grid.Row="3" x:Name="btnStartOrStop" Content="動作" Command="{Binding AnimationActionCommand}" />
+                    <Button Grid.Row="3" x:Name="btnStartOrStop" Content="動作" Command="{Binding AnimationActionCommand}" />
+
+                    <Grid Grid.Row="4">
+                        <Controls:ProgressRing Width="100" Height="100" Foreground="Green" />
+                    </Grid>
+
+                    <Grid Grid.Row="5">
+                        <DataGrid AutoGenerateColumns="False" Margin="10" Name="dataGrid1"
+                  ItemsSource="{Binding Path=Users}" Width="500" HorizontalScrollBarVisibility="Hidden">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=Nickname}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="ユーザ名" Width="80" />
+                                <DataGridTextColumn Binding="{Binding Path=Name}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="氏名" Width="100" />
+                                <DataGridTextColumn Binding="{Binding Path=Birthplace}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="出身地" Width="80" />
+                                <DataGridTextColumn Binding="{Binding Path=Age}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="年齢" Width="50" />
+                                <DataGridTextColumn Binding="{Binding Path=Birthday,
+                        StringFormat=\{0:yyyy/MM/dd\}}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="生年月日" Width="Auto" />
+                                <DataGridTextColumn Binding="{Binding Path=Birthday,
+                        StringFormat=\{0:yyyy/MM/dd\}}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="生年月日" Width="Auto" />
+                                <DataGridTextColumn Binding="{Binding Path=Birthday,
+                        StringFormat=\{0:yyyy/MM/dd\}}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="生年月日" Width="Auto" />
+                                <DataGridTextColumn Binding="{Binding Path=Birthday,
+                        StringFormat=\{0:yyyy/MM/dd\}}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="生年月日" Width="Auto" />
+                                <DataGridTextColumn Binding="{Binding Path=Birthday,
+                        StringFormat=\{0:yyyy/MM/dd\}}"
+                    CanUserReorder="True" CanUserResize="True"
+                    CanUserSort="True" Header="生年月日" Width="Auto" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+
+
+                    <Grid Grid.Row="6">
+                        <Border Background="Black">
+                            <StackPanel Orientation="Vertical">
+                                <!--<TextBlock Text="バインド前" />-->
+                                <!--<TextBlock Text="{Binding Source={x:Static mvm:StaticMethodBindTest},Path=TestPropertyBind}" />-->
+                                <!--<TextBlock Text="{x:Static sys:DateTime.Now}" />-->
+                                <TextBlock Text="{x:Static mvm:StaticMethodBindTest.TestPropertyBind}" />
+                                <TextBlock Text="{Binding Source={x:Static mvm:StaticMethodBindTest.TestPropertyBind},Mode=OneTime}" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="7">
+                        <TextBox x:Name="tb" Text="移動できるテキストボックス" Width="150" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="MetroTile" >
+                <tiles:TilesExample />
+            </TabItem>
+        </TabControl>
+
     </Grid>
+
+
+
 </Window>

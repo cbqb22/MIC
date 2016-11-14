@@ -96,10 +96,19 @@
     </Compile>
     <Compile Include="Controls\Animations\IAnimation.cs" />
     <Compile Include="Controls\Animations\Indicator\IndicatorBase.cs" />
+    <Compile Include="Controls\Animations\ProgressRing\ProgressRing.cs" />
     <Compile Include="Controls\Animations\Indicator\SimpleIndicatorEx.xaml.cs">
       <DependentUpon>SimpleIndicatorEx.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Animations\Indicator\SimpleIndicator.cs" />
+    <Compile Include="Controls\Buttons\ButtonChromeEx.cs" />
+    <Compile Include="Controls\Helpers\ControlsHelper.cs" />
+    <Compile Include="Controls\Tiles\Tile.cs" />
+    <Compile Include="Controls\Tiles\TilesExample.xaml.cs">
+      <DependentUpon>TilesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\BaseWindow.cs" />
+    <Compile Include="CustomControl1.cs" />
     <Compile Include="DependencyPropertyTest\DependencyPropertyExample.xaml.cs">
       <DependentUpon>DependencyPropertyExample.xaml</DependentUpon>
     </Compile>
@@ -139,9 +148,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Tiles\TilesExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DependencyPropertyTest\DependencyPropertyExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ProgressRing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Tile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup />
