@@ -81,77 +81,73 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <Grid Background="{DynamicResource AccentColorBrush4}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80" />
-                <ColumnDefinition Width="430*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="500*" />
-            </Grid.RowDefinitions>
+    <Grid Background="{DynamicResource AccentColorBrush4}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="430*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="500*" />
+        </Grid.RowDefinitions>
 
-            <Border Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Padding="80,0,0,0"
-                    Background="{DynamicResource AccentColorBrush2}">
-                <TextBlock 
+        <Border Grid.Column="0"
+                    Grid.ColumnSpan="2" Background="#7F000000">
+            <!--<TextBlock 
                        
                        VerticalAlignment="Center"
                        Foreground="{DynamicResource WhiteColorBrush}"
                        FontFamily="Segoe UI"
                        FontSize="30"
                        FontWeight="Bold"
-                       Text="AnyForm OCR" />
-            </Border>
+                       Text="AnyForm OCR" />-->
+        </Border>
 
- 
-            <WrapPanel Grid.Row="2"
+
+        <WrapPanel Grid.Row="2"
                        Grid.Column="1"
-                       Width="940"
-                       Height="500"
+                       Width="770"
+                       Height="415"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top">
-                <Controls:Tile Title="Mail"
+            <Controls:Tile Title="Mail"
                                Margin="3"
                                Style="{StaticResource LargeTileStyle}"
                                Background="Teal"
                                Foreground="{DynamicResource WhiteColorBrush}"
-                               HorizontalTitleAlignment="Right">
-                    <!--Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"-->
-                    <!--<iconPacks:PackIconModern Width="40"
+                               HorizontalTitleAlignment="Right"
+                           
+                           >
+                <!--Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"-->
+                <!--<iconPacks:PackIconModern Width="40"
                                              Height="40"
                                              Kind="Email" />-->
-                </Controls:Tile>
-                <Controls:Tile Title="Desktop"
+            </Controls:Tile>
+            <Controls:Tile Title="Desktop"
                                Margin="3"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                Style="{StaticResource LargeTileStyle}">
-                    <!--Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}">-->
-                    <!--<iconPacks:PackIconFontAwesome Width="40"
+                <!--Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}">-->
+                <!--<iconPacks:PackIconFontAwesome Width="40"
                                                   Height="40"
                                                   Kind="Desktop" />-->
-                </Controls:Tile>
-                <Controls:Tile Title="Finance"
+            </Controls:Tile>
+            <Controls:Tile Title="Finance"
                                Style="{StaticResource LargeTileStyle}"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                Background="DimGray">
-                    <!--<iconPacks:PackIconModern Width="40"
+                <!--<iconPacks:PackIconModern Width="40"
                                              Height="40"
                                               Kind="Money" />-->
-                </Controls:Tile>
-                <Controls:Tile Title="People"
+            </Controls:Tile>
+            <Controls:Tile Title="People"
                                Style="{StaticResource LargeTileStyle}"
                                Background="#D2691E"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                HorizontalTitleAlignment="Right">
-                    <!--<iconPacks:PackIconModern Width="40"
+                <!--<iconPacks:PackIconModern Width="40"
                                              Height="40"
                                              Kind="PeopleMultiple" />-->
-                </Controls:Tile>
-                <Controls:Tile Title="Count"
+            </Controls:Tile>
+            <Controls:Tile Title="Count"
                                TitleFontSize="16"
                                HorizontalTitleAlignment="Center"
                                VerticalTitleAlignment="Top"
@@ -161,23 +157,22 @@
                                Background="#FF842D"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                IsEnabled="False" />
-                <Controls:Tile Title="Weather"
+            <Controls:Tile Title="Weather"
                                Style="{StaticResource SmallTileStyle}"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                Background="#1E90FF">
-                    <!--<iconPacks:PackIconMaterial Width="40"
+                <!--<iconPacks:PackIconMaterial Width="40"
                                                Height="40"
                                                Kind="WeatherCloudy" />-->
-                </Controls:Tile>
-                <Controls:Tile Title="Store"
+            </Controls:Tile>
+            <Controls:Tile Title="Store"
                                Style="{StaticResource LargeTileStyle}"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                Background="Green">
-                    <!--<iconPacks:PackIconEntypo Width="40"
+                <!--<iconPacks:PackIconEntypo Width="40"
                                              Height="40"
                                              Kind="WindowsStore" />-->
-                </Controls:Tile>
-            </WrapPanel>
-        </Grid>
-    </ScrollViewer>
+            </Controls:Tile>
+        </WrapPanel>
+    </Grid>
 </UserControl>

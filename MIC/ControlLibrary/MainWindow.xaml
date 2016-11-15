@@ -17,9 +17,12 @@
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource Locator},Path=Main}"
-        Title="MainWindow" Height="auto" Width="1000">
+        Title="" SizeToContent="WidthAndHeight">
     <Grid>
-        <TabControl>
+
+        <tiles:TilesExample VerticalAlignment="Center" />
+
+        <!--<TabControl>
             <TabItem Header="全般" >
                 <Grid>
                     <Grid.RowDefinitions>
@@ -110,9 +113,9 @@
                     <Grid Grid.Row="6">
                         <Border Background="Black">
                             <StackPanel Orientation="Vertical">
-                                <!--<TextBlock Text="バインド前" />-->
+                                --><!--<TextBlock Text="バインド前" />-->
                                 <!--<TextBlock Text="{Binding Source={x:Static mvm:StaticMethodBindTest},Path=TestPropertyBind}" />-->
-                                <!--<TextBlock Text="{x:Static sys:DateTime.Now}" />-->
+                                <!--<TextBlock Text="{x:Static sys:DateTime.Now}" />--><!--
                                 <TextBlock Text="{x:Static mvm:StaticMethodBindTest.TestPropertyBind}" />
                                 <TextBlock Text="{Binding Source={x:Static mvm:StaticMethodBindTest.TestPropertyBind},Mode=OneTime}" />
                             </StackPanel>
@@ -127,7 +130,7 @@
             <TabItem Header="MetroTile" >
                 <tiles:TilesExample />
             </TabItem>
-        </TabControl>
+        </TabControl>-->
 
     </Grid>
 
