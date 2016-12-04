@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIC.Wpf", "MIC.Wpf\MIC.Wpf.csproj", "{25664486-0234-4A2A-9EF5-AE2110088C4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlLibrary", "ControlLibrary\ControlLibrary.csproj", "{50C23ACA-A8CF-4F7C-9CC5-BDA8331F0109}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery", "ControlLibrary\Gallery.csproj", "{50C23ACA-A8CF-4F7C-9CC5-BDA8331F0109}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIC.Try", "MIC.Try\MIC.Try.csproj", "{DC89EF9F-0E17-47D0-884E-BFD0E543935B}"
 EndProject

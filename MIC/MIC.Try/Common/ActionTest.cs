@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace MIC.Try.Common
 {
@@ -12,8 +13,67 @@ namespace MIC.Try.Common
         // 任意のタイミングで呼べるアクション=Event
         public event Action SomeEventHandler;
 
+        public void Test()
+        {
+
+            Task.Run(() =>
+            {
+                Debug.WriteLine("Task1");
+
+            });
+
+            //t.Wait();
+            Debug.WriteLine("Task2");
+
+
+            var t2 = Task.Run(() =>
+            {
+                Debug.WriteLine("Task3");
+
+            });
+
+            Debug.WriteLine("Task4");
+            t2.Wait();
+
+
+            var t3 = Task.Run(() =>
+            {
+                Debug.WriteLine("TaskA");
+                Task.Run(() =>
+                {
+                    Debug.WriteLine("TaskB");
+
+                });
+                Debug.WriteLine("TaskC");
+
+            });
+
+            t3.Wait();
+            Debug.WriteLine("TaskD");
+
+
+            var t4 = Task.Run(async () =>
+            {
+                Debug.WriteLine("TaskA");
+                await Task.Run(() =>
+                {
+                    Debug.WriteLine("TaskB");
+
+                });
+                Debug.WriteLine("TaskC");
+
+            });
+
+            t4.Wait();
+
+            Debug.WriteLine("TaskD");
+
+        }
+
+
         public ActionTest()
         {
+            //Test();
 
             SomeEventHandler = () => { };
 
@@ -21,13 +81,13 @@ namespace MIC.Try.Common
             Action<int, string> act = ActionMethod;
             Func<int, string, bool> func = FuncMethod;
 
-            ActionArgsMethod(1, true, (s1, s2) => 
+            ActionArgsMethod(1, true, (s1, s2) =>
             {
 
             });
 
 
-            var list = new[] 
+            var list = new[]
             {
                 new { id = 1, name = "" },
                 new { id = 1, name = "" },
@@ -42,42 +102,139 @@ namespace MIC.Try.Common
                     return true;
                 else
                     return false;
-            } ).Select(x => x);
+            }).Select(x => x);
 
 
-            var list2 = new List<string>() {"aaa","bbb" };
+            var list2 = new List<string>() { "aaa", "bbb" };
             list2.Where(FilterFunc).Select(x => x).ToList();
+
+            // Action a = async () => //ともできてしまう。
+            Func<Task> a = async () =>
+          {
+              try
+              {
+                  await Task.Run(() =>
+                  {
+                        // 重い処理
+
+                        // こっちの例外もmainスレッドの中でやってくれる
+                        //throw new Exception("await処理の中");
+
+                    });
+
+                    //await Task.Run(() => { });
+
+
+                    // mainスレッドでやってくれる
+                    //throw new Exception("await処理の外");
+                }
+              catch (Exception ex)
+              {
+                  Debug.WriteLine(ex.Message);
+                  throw;
+
+              }
+          };
+
+
+            //mainスレッドで処理してくれる
+            Task tttt = a();
+
+
+            //var t = Task.Run(a);
+
 
 
             var context = SynchronizationContext.Current;
-            System.Diagnostics.Debug.WriteLine("ActionTest:" +  context.GetHashCode().ToString());
+            System.Diagnostics.Debug.WriteLine("ActionTest:" + context.GetHashCode().ToString());
             CancellationTokenSource source = new CancellationTokenSource();
-            var t = TaskRun(new Progress<int>(), source.Token, context);  // 非同期処理 await
+            //var t = TaskRun(new Progress<int>(), source.Token, context);  // 非同期処理 await
 
+
+
+
+
+
+
+
+            //Func<Task> r =
+            //        async () =>
+            //        {
+            //            try
+            //            {
+            //                await Task.Run(() =>
+            //                {
+            //                    throw new Exception();
+            //                });
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                throw ex;
+            //                //context.Post
+            //                //(
+            //                //    (exception) =>
+            //                //    {
+            //                //        throw (Exception)exception;
+            //                //    }, ex
+            //                //    );
+            //            }
+            //        };
+
+
+            // TaskScheduler.FromCurrentSynchronizationContext()はSynchronizedContext.Currentとは違うコンテキストを取得してくる
             Task.Run
                 (
-                    async () =>
+                    () =>
                     {
                         try
                         {
-                            await Task.Run(() =>
-                            {
-                                throw new Exception();
-                            });
+                            throw new Exception();
                         }
                         catch (Exception ex)
                         {
-                            context.Post
-                            (
-                                (exception) =>
-                                {
-                                    throw (Exception)exception;
-                                }, ex
-                                );
+                            throw ex;
                         }
                     }
-                );
+                ).ContinueWith(result =>
+                {
+                    if (result.Exception != null)
+                        throw result.Exception;
 
+                }, TaskScheduler.FromCurrentSynchronizationContext());
+
+
+            Task.Run
+                (
+                    () =>
+                    {
+                        try
+                        {
+                            throw new Exception();
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                    }
+                ).ContinueWith(result =>
+                {
+
+                    if (result.Exception != null)
+                        context.Post((_) =>
+                        {
+                            throw result.Exception;
+                        }, null);
+                });
+
+
+
+
+            //r().ContinueWith(result =>
+            //{
+            //    if (result.Exception != null)
+            //        throw result.Exception;
+
+            //}, TaskScheduler.FromCurrentSynchronizationContext());
 
 
             //var t2 = TaskRun(new Progress<int>(), source.Token);  // 非同期処理 await
@@ -111,11 +268,11 @@ namespace MIC.Try.Common
         }
 
 
-        private async Task TaskRun(IProgress<int> progress,CancellationToken token,SynchronizationContext context)
+        private async Task TaskRun(IProgress<int> progress, CancellationToken token, SynchronizationContext context)
         {
             Action<int> a = (i) => { };
 
-            Func<int> act = () => 
+            Func<int> act = () =>
             {
                 progress.Report(1);
 
@@ -128,9 +285,9 @@ namespace MIC.Try.Common
                 //token.ThrowIfCancellationRequested();
                 //try
                 //{
-                    SomeEventHandler();
-                    throw new Exception("aa");
-                    return 1;
+                SomeEventHandler();
+                //throw new Exception("aa");
+                return 1;
                 //}
                 //　ここでキャッチしてしまうと処理された例外扱いになってしまう。
                 //catch (Exception ex)
@@ -153,7 +310,7 @@ namespace MIC.Try.Common
                 System.Diagnostics.Debug.WriteLine(i.ToString());
 
                 // ConfigureAwait(false)だと戻ってきたとき、コンテキストが異なる
-                await Task.Run(()=> { });
+                await Task.Run(() => { });
 
 
                 //throw new Exception("ああああああ");
@@ -187,9 +344,9 @@ namespace MIC.Try.Common
                 //System.Diagnostics.Debug.WriteLine(i.ToString());
                 int i2 = context.GetHashCode();
                 System.Diagnostics.Debug.WriteLine(i2.ToString());
-                context.Post((state) => 
+                context.Post((state) =>
                 {
-                    throw new Exception(ex.Message,ex);
+                    throw new Exception(ex.Message, ex);
                 }, ex);
                 //throw;
             }
@@ -201,11 +358,7 @@ namespace MIC.Try.Common
         }
 
 
-        private async void FireForget()
-        {
 
-        }
-       
 
         private void ActionMethod(int i, string str)
         {
@@ -215,9 +368,9 @@ namespace MIC.Try.Common
         {
             return true;
         }
-        
 
-        private void ActionArgsMethod(int i, bool b, Action<string,string> hogeAction)
+
+        private void ActionArgsMethod(int i, bool b, Action<string, string> hogeAction)
         {
         }
 

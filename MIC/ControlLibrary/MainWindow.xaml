@@ -1,9 +1,9 @@
-﻿<Window x:Class="ControlLibrary.MainWindow"
+﻿<Window x:Class="Gallery.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ControlLibrary"
+        xmlns:local="clr-namespace:Gallery"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:t="clr-namespace:MIC.Wpf.Common.Triggers;assembly=MIC.Wpf"
         xmlns:a="clr-namespace:MIC.Wpf.Common.Actions;assembly=MIC.Wpf"
@@ -13,7 +13,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:Controls="clr-namespace:MIC.Wpf.Controls.Animations.ProgressRing;assembly=MIC.Wpf"
         xmlns:tiles="clr-namespace:MIC.Wpf.Controls.Tiles;assembly=MIC.Wpf"
-        xmlns:mvm="clr-namespace:ControlLibrary.ViewModel"
+        xmlns:mvm="clr-namespace:Gallery.ViewModel"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:TryCommon="clr-namespace:MIC.Try.Common;assembly=MIC.Try"
         mc:Ignorable="d"
@@ -21,9 +21,6 @@
         DataContext="{Binding Source={StaticResource Locator},Path=Main}"
         Title="MainWindow" Height="auto" Width="1000">
     <Grid>
-        
-        
-
         <p:NormalEntity x:Name="normal" xmlns:p="clr-namespace:MIC.Try.Common;assembly=MIC.Try" BoolProperty="True" StringProperty="あああああ">
         </p:NormalEntity>
         <TabControl>

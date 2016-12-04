@@ -19,7 +19,7 @@ using MIC.Try.Common;
 using System.Threading;
 
 
-namespace ControlLibrary
+namespace Gallery
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
@@ -45,9 +45,6 @@ namespace ControlLibrary
         {
             var b = AttachedProperty.GetIsCenter(this.label);
             var normalB = normal.BoolProperty;
-
-            //AttachedProperty.SetIsCenter(this.label, true);
-            //AttachedProperty.SetIsCenter(this.canvas, true);
         }
 
         public MainWindow(int i = 1)

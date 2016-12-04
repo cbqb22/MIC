@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 
 
-namespace ControlLibrary.ViewModel
+namespace Gallery.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

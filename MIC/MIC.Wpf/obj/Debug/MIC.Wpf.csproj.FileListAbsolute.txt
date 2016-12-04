@@ -168,4 +168,14 @@ C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.Properties.Re
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.csproj.GenerateResource.Cache
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.dll
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.pdb
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Users\poohace\Desktop\GitRepo\MIC\MIC\MIC.Wpf\obj\Debug\MIC.Wpf.csprojResolveAssemblyReference.cache

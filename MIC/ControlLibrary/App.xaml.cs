@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows;
 
-namespace ControlLibrary
+namespace Gallery
 {
     /// <summary>
     /// App.xaml の相互作用ロジック
@@ -29,6 +29,7 @@ namespace ControlLibrary
 
             //throw new Exception("うい");
         }
+
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {

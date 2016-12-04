@@ -173,6 +173,7 @@
                                Style="{StaticResource LargeTileStyle}"
                                Foreground="{DynamicResource WhiteColorBrush}"
                                Background="Green">
+                    <Image Source="/Resources/mushimegane.png" Width="80" Height="80" />
                     <!--<iconPacks:PackIconEntypo Width="40"
                                              Height="40"
                                              Kind="WindowsStore" />-->

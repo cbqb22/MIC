@@ -1,0 +1,2 @@
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\Gallery.exe.config
+C:\Users\poohace\Desktop\GitRepo\MIC\MIC\ControlLibrary\bin\Debug\UIGallery.exe.config
