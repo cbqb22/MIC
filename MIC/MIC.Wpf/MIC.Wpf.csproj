@@ -68,8 +68,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +88,7 @@
     <Compile Include="BindableStructs\BindablePoint.cs" />
     <Compile Include="Common\Actions\AnimationAction.cs" />
     <Compile Include="Common\Behaviors\ScrollViewerMouseMoveBehavior.cs" />
+    <Compile Include="Common\Behaviors\TextBoxSelectBehaviors.cs" />
     <Compile Include="Common\Events\AnimationStartEvent.cs" />
     <Compile Include="Common\Message\AnimationActionMessage.cs" />
     <Compile Include="Common\Triggers\AnimationMessageTrigger.cs" />
@@ -173,7 +174,9 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\mushimegane.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

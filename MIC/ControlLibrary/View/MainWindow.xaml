@@ -1,0 +1,87 @@
+﻿<metro:MetroWindow x:Class="Gallery.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Gallery.View"
+        xmlns:t="clr-namespace:MIC.Wpf.Common.Triggers;assembly=MIC.Wpf"
+        xmlns:a="clr-namespace:MIC.Wpf.Common.Actions;assembly=MIC.Wpf"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:indicator="clr-namespace:MIC.Wpf.Controls.Animations.Indicator;assembly=MIC.Wpf"
+        xmlns:Controls="clr-namespace:MIC.Wpf.Controls.Animations.ProgressRing;assembly=MIC.Wpf"
+        xmlns:tiles="clr-namespace:MIC.Wpf.Controls.Tiles;assembly=MIC.Wpf"
+        xmlns:textbox="clr-namespace:MIC.Wpf.Common.Behaviors;assembly=MIC.Wpf"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="MainWindow"
+        >
+    <Grid>
+        <p:NormalEntity x:Name="normal" xmlns:p="clr-namespace:MIC.Try.Common;assembly=MIC.Try" BoolProperty="True" StringProperty="あああああ">
+        </p:NormalEntity>
+        <TabControl Margin="48,1,-48,-1">
+            <TabItem Header="アニメーション" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="11*"/>
+                            <ColumnDefinition Width="612*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Width="100" Grid.Column="2" Margin="187,0,325,0">
+                            <indicator:SimpleIndicatorEx x:Name="indicator" IndicationThemeColor="Green" DisplayText="停止中" PlayingText="監視中" StoppedText="停止" PausingText="一時停止">
+                                <i:Interaction.Triggers>
+                                    <t:AnimationMessageTrigger>
+                                        <a:AnimationAction/>
+                                    </t:AnimationMessageTrigger>
+                                </i:Interaction.Triggers>
+                            </indicator:SimpleIndicatorEx>
+                        </Viewbox>
+
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Controls:ProgressRing Width="100" Height="100" Foreground="Green" />
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Button Width="100" Height="50" Click="Button_Click">
+                            <Image Source="/Resources/mushimegane.png" />
+                        </Button>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="MetroTile" >
+                <tiles:TilesExample />
+            </TabItem>
+            <TabItem Header="TextBoxTest" >
+                <TabItem.Resources>
+                    <Style x:Key="trgFocus" TargetType="TextBox">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=tbxTest, Path=IsVisible}" Value="true">
+                                <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=txtUserName}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Resources>
+                <Grid>
+                    <TextBox x:Name="tbxTest" 
+                             Text="aaaa" 
+                             Style="{StaticResource trgFocus}" 
+                             Width="100" 
+                             Height="30" 
+                             />
+                    <!--textbox:TextBoxSelectBehaviors.CaretToLast="True"-->
+                    <!--CaretIndex="1"
+                             textbox:TextBoxSelectBehaviors.SelectAllTextOnFocus="True"-->
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</metro:MetroWindow>
