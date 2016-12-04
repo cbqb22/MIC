@@ -44,7 +44,7 @@ namespace Gallery
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             var b = AttachedProperty.GetIsCenter(this.label);
-            var normalB = normal.BoolProperty;
+            //var normalB = normal.BoolProperty;
         }
 
         public MainWindow(int i = 1)

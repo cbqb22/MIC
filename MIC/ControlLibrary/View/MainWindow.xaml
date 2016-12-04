@@ -17,8 +17,8 @@
         Title="MainWindow"
         >
     <Grid>
-        <p:NormalEntity x:Name="normal" xmlns:p="clr-namespace:MIC.Try.Common;assembly=MIC.Try" BoolProperty="True" StringProperty="あああああ">
-        </p:NormalEntity>
+        <!--<p:NormalEntity x:Name="normal" xmlns:p="clr-namespace:MIC.Try.Common;assembly=MIC.Try" BoolProperty="True" StringProperty="あああああ">
+        </p:NormalEntity>-->
         <TabControl Margin="48,1,-48,-1">
             <TabItem Header="アニメーション" >
                 <Grid >

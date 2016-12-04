@@ -21,8 +21,8 @@
         DataContext="{Binding Source={StaticResource Locator},Path=Main}"
         Title="MainWindow" Height="auto" Width="1000">
     <Grid>
-        <p:NormalEntity x:Name="normal" xmlns:p="clr-namespace:MIC.Try.Common;assembly=MIC.Try" BoolProperty="True" StringProperty="あああああ">
-        </p:NormalEntity>
+        <!--<p:NormalEntity x:Name="normal" xmlns:p="clr-namespace:MIC.Try.Common;assembly=MIC.Try" BoolProperty="True" StringProperty="あああああ">
+        </p:NormalEntity>-->
         <TabControl>
             <TabItem Header="全般" >
                 <Grid>

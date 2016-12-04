@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIC.Wpf", "MIC.Wpf\MIC.Wpf.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery", "ControlLibrary\Gallery.csproj", "{50C23ACA-A8CF-4F7C-9CC5-BDA8331F0109}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIC.Try", "..\..\..\Desktop\GitRepo\MIC\MIC\MIC.Try\MIC.Try.csproj", "{DC89EF9F-0E17-47D0-884E-BFD0E543935B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50C23ACA-A8CF-4F7C-9CC5-BDA8331F0109}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C23ACA-A8CF-4F7C-9CC5-BDA8331F0109}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C23ACA-A8CF-4F7C-9CC5-BDA8331F0109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC89EF9F-0E17-47D0-884E-BFD0E543935B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC89EF9F-0E17-47D0-884E-BFD0E543935B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC89EF9F-0E17-47D0-884E-BFD0E543935B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC89EF9F-0E17-47D0-884E-BFD0E543935B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

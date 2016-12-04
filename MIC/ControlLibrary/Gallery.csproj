@@ -141,6 +141,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\GitRepo\MIC\MIC\MIC.Try\MIC.Try.csproj">
+      <Project>{dc89ef9f-0e17-47d0-884e-bfd0e543935b}</Project>
+      <Name>MIC.Try</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MIC.Wpf\MIC.Wpf.csproj">
       <Project>{25664486-0234-4a2a-9ef5-ae2110088c4a}</Project>
       <Name>MIC.Wpf</Name>
